@@ -74,7 +74,7 @@
 
 // 1.
 // Write a simple greeting function that just prints "Hello!" and save it to a variable. Schedule it to run one time, 5 seconds from now.
-const greeting = () => {
+const greeting = function() {
     console.log('Hello!')
 }
 
@@ -114,8 +114,6 @@ BONUS: How could you mimic the setInterval functionality using setTimeout?
 // keep track of the current count
 let count = 10
 
-const countDownInterval = setInterval(countDown, 1000)
-
 // using a named function to take advantage of 'hoisting' (refering to a function before it is defined)
 function countDown() {
     // if the count is greaterthan 0, print the current count and decrement it
@@ -128,6 +126,14 @@ function countDown() {
         clearInterval(countDownInterval)
     }
 }
+
+const s = setInterval(countDown, 1000)
+
+// 1. does it work? 
+// 2. is it as readable as possible -- self documenting code
+    // 2a. is it maintainable?
+    // 2b. is it scalable? 
+// 3. is it running efficiently?
 
 // bonus
 // let count = 10
